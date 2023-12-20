@@ -85,7 +85,7 @@ class CHFIdentifierModelRetriever(CodeIdentifierModelRetriever):
     @classmethod
     def identifier_validator(cls, identifier_value):
         # From model specification
-        return isinstance(identifier_value, str) and len(identifier_value) <= 12
+        return isinstance(identifier_value, str)
 
     @classmethod
     def get_model_object(cls, queryset: QuerySet, identifier_value) -> Model:
