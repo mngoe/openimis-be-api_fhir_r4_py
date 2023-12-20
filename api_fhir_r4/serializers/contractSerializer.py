@@ -1,6 +1,6 @@
 from api_fhir_r4.converters.contractConverter import ContractConverter
 from api_fhir_r4.serializers import BaseFHIRSerializer
-from contribution.services import update_or_create_premium
+#from contribution.services import update_or_create_premium
 from policy.services import PolicyService
 from policy.models import Policy
 import copy
