@@ -34,6 +34,7 @@ def _MultiserializerPermissionClassWrapper(PermissionClass):
             return False
 
         perms = self.get_required_permissions(request.method, queryset.model)
+        print("perms ", perms)
         return request.user.has_perms(perms)
 
     permission_class = type('PermissionClassWrapper', PermissionClass.__bases__, dict(PermissionClass.__dict__))
