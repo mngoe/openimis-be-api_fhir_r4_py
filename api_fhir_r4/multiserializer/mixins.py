@@ -154,7 +154,6 @@ class GenericMultiSerializerViewsetMixin(ABC):
             permission_classes = [
                 _MultiserializerPermissionClassWrapper(perm_cls)() for perm_cls in permission_classes
             ]
-            print("permission_classes ", permission_classes)
             if all([p.has_permission(self.request, self, queryset) for p in permission_classes]):
                 eligible_serializers.append(serializer)
 
