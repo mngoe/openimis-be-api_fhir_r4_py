@@ -122,7 +122,8 @@ class FHIRApiConditionPermissions(FHIRApiPermissions):
 
 
 class FHIRApiActivityDefinitionPermissions(FHIRApiPermissions):
-    permissions_get = MedicalConfig.gql_query_medical_services_perms
+    permissions_get = ClaimConfig.gql_query_claims_perms
+    # permissions_get = MedicalConfig.gql_query_medical_services_perms
     permissions_post = MedicalConfig.gql_mutation_medical_services_add_perms
     permissions_put = MedicalConfig.gql_mutation_medical_services_update_perms
     permissions_patch = MedicalConfig.gql_mutation_medical_services_update_perms
