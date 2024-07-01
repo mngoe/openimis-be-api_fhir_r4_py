@@ -356,6 +356,7 @@ class ActivityDefinitionConverter(BaseFHIRConverter, ReferenceConverterMixin):
             child_coding = cls.build_fhir_patient_category_coding("child")
             codeable_concept.coding.append(child_coding)
 
+        print("codeable_concept ", codeable_concept)
         codeable_concept.text = " or ".join([coding.display for coding in codeable_concept.coding])
 
         return codeable_concept
