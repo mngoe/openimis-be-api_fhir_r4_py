@@ -357,7 +357,8 @@ class ActivityDefinitionConverter(BaseFHIRConverter, ReferenceConverterMixin):
             codeable_concept.coding.append(child_coding)
 
         print("codeable_concept ", codeable_concept)
-        codeable_concept.text = " or ".join([coding.display for coding in codeable_concept.coding])
+        codeable_concept.text = "Adult"
+        # codeable_concept.text = " or ".join([coding.display for coding in codeable_concept.coding])
 
         return codeable_concept
 
