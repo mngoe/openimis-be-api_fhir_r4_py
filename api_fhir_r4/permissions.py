@@ -106,7 +106,8 @@ class FHIRApiInsureePermissions(FHIRApiPermissions):
 
 
 class FHIRApiMedicationPermissions(FHIRApiPermissions):
-    permissions_get = MedicalConfig.gql_query_medical_items_perms
+    # permissions_get = MedicalConfig.gql_query_medical_items_perms
+    permissions_get = ClaimConfig.gql_query_claims_perms
     permissions_post = MedicalConfig.gql_mutation_medical_items_add_perms
     permissions_put = MedicalConfig.gql_mutation_medical_items_update_perms
     permissions_patch = MedicalConfig.gql_mutation_medical_items_update_perms
