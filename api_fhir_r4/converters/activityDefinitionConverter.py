@@ -392,6 +392,7 @@ class ActivityDefinitionConverter(BaseFHIRConverter, ReferenceConverterMixin):
 
     @classmethod
     def build_fhir_topic_coding(cls, topic):
+        print("topic ", topic)
         if topic and topic == "c":
             topic = "C"
         return cls.build_fhir_mapped_coding(ServiceTypeMapping.fhir_service_type_coding[topic])
