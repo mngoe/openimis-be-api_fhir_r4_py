@@ -319,7 +319,10 @@ class ActivityDefinitionConverter(BaseFHIRConverter, ReferenceConverterMixin):
             codeable_concept.coding.append(imp_coding)
 
         print("codeable concept (fhir venue) ", codeable_concept)
-        codeable_concept.text = " or ".join([coding.display for coding in codeable_concept.coding])
+        if codeable_concept.coding:
+            codeable_concept.text = " or ".join([coding.display for coding in codeable_concept.coding])
+        else:
+            codeable_concept.text = "AMB"
 
         return codeable_concept
 
