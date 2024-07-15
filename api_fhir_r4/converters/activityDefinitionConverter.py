@@ -318,6 +318,7 @@ class ActivityDefinitionConverter(BaseFHIRConverter, ReferenceConverterMixin):
             imp_coding = cls.build_fhir_venue_coding(Service.CARE_TYPE_IN_PATIENT)
             codeable_concept.coding.append(imp_coding)
 
+        print("codeable concept (fhir venue) ", codeable_concept)
         codeable_concept.text = " or ".join([coding.display for coding in codeable_concept.coding])
 
         return codeable_concept
