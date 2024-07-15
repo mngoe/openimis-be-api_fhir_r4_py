@@ -380,6 +380,8 @@ class ActivityDefinitionConverter(BaseFHIRConverter, ReferenceConverterMixin):
     def build_fhir_workflow_coding(cls, workflow):
         if workflow in ["V", "H"]:
             workflow="O"
+        if workflow == "s":
+            workflow = "S"
         return cls.build_fhir_mapped_coding(WorkflowMapping.fhir_workflow_coding[workflow])
 
     @classmethod
