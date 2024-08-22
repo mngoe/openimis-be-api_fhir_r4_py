@@ -50,7 +50,7 @@ class FHIRApiCommunicationRequestPermissions(FHIRApiPermissions):
 
 
 class FHIRApiPractitionerPermissions(FHIRApiPermissions):
-    permissions_get = ClaimConfig.gql_query_claims_perms
+    permissions_get = []
     permissions_post = CoreConfig.gql_mutation_create_claim_administrator_perms
     permissions_put = CoreConfig.gql_mutation_update_claim_administrator_perms
     permissions_patch = CoreConfig.gql_mutation_update_claim_administrator_perms
@@ -58,7 +58,7 @@ class FHIRApiPractitionerPermissions(FHIRApiPermissions):
 
 
 class FHIRApiPractitionerOfficerPermissions(FHIRApiPermissions):
-    permissions_get = ClaimConfig.gql_query_claims_perms
+    permissions_get = []
     permissions_post = CoreConfig.gql_mutation_create_enrolment_officers_perms
     permissions_put = CoreConfig.gql_mutation_update_enrolment_officers_perms
     permissions_patch = CoreConfig.gql_mutation_update_enrolment_officers_perms
@@ -82,7 +82,7 @@ class FHIRApiCoverageRequestPermissions(FHIRApiPermissions):
 
 
 class FHIRApiHFPermissions(FHIRApiPermissions):
-    permissions_get = LocationConfig.gql_query_health_facilities_perms
+    permissions_get = []
     permissions_post = LocationConfig.gql_mutation_create_health_facilities_perms
     permissions_put = LocationConfig.gql_mutation_create_health_facilities_perms
     permissions_patch = LocationConfig.gql_mutation_create_health_facilities_perms
@@ -90,7 +90,7 @@ class FHIRApiHFPermissions(FHIRApiPermissions):
 
 
 class FHIRApiInsuranceOrganizationPermissions(FHIRApiPermissions):
-    permissions_get = LocationConfig.gql_query_health_facilities_perms
+    permissions_get = []
     permissions_post = []
     permissions_put = []
     permissions_patch = []
@@ -106,8 +106,7 @@ class FHIRApiInsureePermissions(FHIRApiPermissions):
 
 
 class FHIRApiMedicationPermissions(FHIRApiPermissions):
-    # permissions_get = MedicalConfig.gql_query_medical_items_perms
-    permissions_get = ClaimConfig.gql_query_claims_perms
+    permissions_get = []
     permissions_post = MedicalConfig.gql_mutation_medical_items_add_perms
     permissions_put = MedicalConfig.gql_mutation_medical_items_update_perms
     permissions_patch = MedicalConfig.gql_mutation_medical_items_update_perms
@@ -115,7 +114,7 @@ class FHIRApiMedicationPermissions(FHIRApiPermissions):
 
 
 class FHIRApiConditionPermissions(FHIRApiPermissions):
-    permissions_get = MedicalConfig.gql_query_diagnosis_perms
+    permissions_get = []
     permissions_post = []
     permissions_put = []
     permissions_patch = []
@@ -123,8 +122,7 @@ class FHIRApiConditionPermissions(FHIRApiPermissions):
 
 
 class FHIRApiActivityDefinitionPermissions(FHIRApiPermissions):
-    permissions_get = ClaimConfig.gql_query_claims_perms
-    # permissions_get = MedicalConfig.gql_query_medical_services_perms
+    permissions_get = []
     permissions_post = MedicalConfig.gql_mutation_medical_services_add_perms
     permissions_put = MedicalConfig.gql_mutation_medical_services_update_perms
     permissions_patch = MedicalConfig.gql_mutation_medical_services_update_perms
@@ -132,7 +130,7 @@ class FHIRApiActivityDefinitionPermissions(FHIRApiPermissions):
 
 
 class FHIRApiHealthServicePermissions(FHIRApiPermissions):
-    permissions_get = LocationConfig.gql_query_health_facilities_perms
+    permissions_get = []
     permissions_post = LocationConfig.gql_mutation_create_health_facilities_perms
     permissions_put = LocationConfig.gql_mutation_edit_health_facilities_perms
     permissions_patch = LocationConfig.gql_mutation_edit_health_facilities_perms
@@ -156,7 +154,7 @@ class FHIRApiOrganizationPermissions(FHIRApiPermissions):
 
 
 class FHIRApiProductPermissions(FHIRApiPermissions):
-    permissions_get = ProductConfig.gql_query_products_perms
+    permissions_get = []
     permissions_post = ProductConfig.gql_mutation_products_add_perms
     permissions_put = ProductConfig.gql_mutation_products_edit_perms
     permissions_patch = ProductConfig.gql_mutation_products_edit_perms
