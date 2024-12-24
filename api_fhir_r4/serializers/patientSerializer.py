@@ -9,6 +9,7 @@ from api_fhir_r4.converters import PatientConverter
 from api_fhir_r4.exceptions import FHIRException
 from api_fhir_r4.serializers import BaseFHIRSerializer
 from insuree.services import InsureeService
+from location import models as location_models
 
 
 class PatientSerializer(BaseFHIRSerializer):
@@ -23,6 +24,10 @@ class PatientSerializer(BaseFHIRSerializer):
 
         if copied_data['head']:
             self._create_patient_family(obj, validated_data)
+        else:
+            if not obj.family:
+                validated_data['family_location'] = validated_data.get('family_location') or location_models.Location.objects.get(id=validated_data.get('current_village_id'))
+                self._create_patient_family(obj, validated_data)
         return obj
 
     def update(self, instance, validated_data):
